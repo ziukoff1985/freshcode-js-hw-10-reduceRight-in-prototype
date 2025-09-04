@@ -18,14 +18,32 @@ MyArray.prototype.reduceRight = function (callback, initialValue) {
     return accumulator;
 };
 
-const targetArr = new MyArray(100, 200, 300, 400);
-console.log(targetArr);
-
-// function callbackFunc(acc, curr, _index, _array) {
-//     return acc + curr;
-// }
+const newObj = new MyArray(1, 2, 3, 4, 5);
 
 console.log(
     'Sum of all elements =',
-    targetArr.reduceRight((acc, curr) => acc + curr)
+    newObj.reduceRight((acc, curr) => acc + curr)
+);
+console.log(
+    'Product of all elements =',
+    newObj.reduceRight((acc, curr) => acc * curr)
+);
+console.log(
+    'Average of all elements =',
+    newObj.reduceRight((acc, curr) => {
+        return acc + curr;
+    }) / newObj.length
+);
+
+console.log(
+    'Maximum of all elements =',
+    newObj.reduceRight((acc, curr) => {
+        return acc < curr ? curr : acc;
+    })
+);
+console.log(
+    'Minimum of all elements =',
+    newObj.reduceRight((acc, curr) => {
+        return acc < curr ? acc : curr;
+    })
 );
