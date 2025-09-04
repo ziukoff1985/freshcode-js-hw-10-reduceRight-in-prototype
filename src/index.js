@@ -9,10 +9,13 @@ function MyArray(...elements) {
 
 MyArray.prototype.reduceRight = function (callback, initialValue) {
     const hasInitial = arguments.length > 1;
+
     if (this.length === 0 && !hasInitial) {
         throw new TypeError('Reduce of empty array with no initial value');
     }
+
     let accumulator = hasInitial ? initialValue : this[this.length - 1];
+
     const startIndex = hasInitial ? this.length - 1 : this.length - 2;
 
     for (let i = startIndex; i >= 0; i--) {
