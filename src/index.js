@@ -66,10 +66,10 @@ console.log(
     newObj.reduceRight((acc, curr) => acc + curr.toString(), '')
 );
 
-const mixedArray = new MyArray('y', 't', 'r', 'e', 'w', 'q');
+const stringArray = new MyArray('y', 't', 'r', 'e', 'w', 'q');
 console.log(
     'Concat of all elements =',
-    mixedArray.reduceRight((acc, curr) => acc + curr)
+    stringArray.reduceRight((acc, curr) => acc + curr)
 );
 
 const objArray = new MyArray({ x: 1 }, { x: 2 }, { x: 3 });
