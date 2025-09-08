@@ -15,7 +15,6 @@ MyArray.prototype.reduceRight = function (callback, initialValue) {
     }
 
     let accumulator = hasInitial ? initialValue : this[this.length - 1];
-
     const startIndex = hasInitial ? this.length - 1 : this.length - 2;
 
     for (let i = startIndex; i >= 0; i--) {
@@ -25,6 +24,8 @@ MyArray.prototype.reduceRight = function (callback, initialValue) {
 };
 
 const newObj = new MyArray(1, 2, 3, 4, 5);
+const stringArray = new MyArray('y', 't', 'r', 'e', 'w', 'q');
+const objArray = new MyArray({ x: 1 }, { x: 2 }, { x: 3 });
 
 console.log(
     'Sum of all elements =',
@@ -66,13 +67,11 @@ console.log(
     newObj.reduceRight((acc, curr) => acc + curr.toString(), '')
 );
 
-const stringArray = new MyArray('y', 't', 'r', 'e', 'w', 'q');
 console.log(
     'Concat of all elements =',
     stringArray.reduceRight((acc, curr) => acc + curr)
 );
 
-const objArray = new MyArray({ x: 1 }, { x: 2 }, { x: 3 });
 console.log(
     'Sum of prop x in obj:',
     objArray.reduceRight((acc, curr) => acc + curr.x, 0)
